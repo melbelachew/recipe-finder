@@ -10,8 +10,12 @@ export class RecipesController {
         return this.recipesServices.addRecipe(recipe)
     }
     @Get("search")
-    async search(@Query('q')query :string){
-        return this.recipesServices.searchRecipes(query)
+    async search(
+        @Query('q')query :string,
+        @Query('cuisine')cuisine?: string,
+        @Query('ingredient')ingredient?: string
+        ){
+        return this.recipesServices.searchRecipes(query, cuisine, ingredient)
     }
 }
 

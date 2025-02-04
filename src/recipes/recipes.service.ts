@@ -9,7 +9,7 @@ export class RecipesService {
     return this.elasticsearchService.indexRecipe(recipe);
   }
 
-  async searchRecipes(query: string) {
+  async searchRecipes(query: string, cuisine?: string, ingredients?: string) {
     return this.elasticsearchService.searchRecipe(query);
   }
 }

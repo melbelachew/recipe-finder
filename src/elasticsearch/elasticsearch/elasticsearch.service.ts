@@ -74,7 +74,7 @@ private async initElasticsearch(){
             mustQuery.push({
                 multi_match:{
                     query,
-                    fields:['title^3', 'ingredients', 'cuisine'],
+                    fields:['title^5', 'ingredients^2', 'cuisine'],
                     fuzziness: 'AUTO'
                 }
             })

@@ -12,4 +12,8 @@ export class RecipesService {
   async searchRecipes(query: string, cuisine?: string, ingredients?: string) {
     return this.elasticsearchService.searchRecipe(query);
   }
+
+  async autoCompleteRecipes(prefix: string){
+    return this.elasticsearchService.autoCompleteRecipes(prefix)
+  }
 }

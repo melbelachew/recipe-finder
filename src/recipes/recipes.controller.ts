@@ -17,5 +17,11 @@ export class RecipesController {
         ){
         return this.recipesServices.searchRecipes(query, cuisine, ingredient)
     }
+    @Get('autoComplete')
+    async autoComplete(
+        @Query('q')prefix: string,
+    ){
+        return this.recipesServices.autoCompleteRecipes(prefix)
+    }
 }
 
